@@ -1,0 +1,79 @@
+﻿@page
+@model RecordModel
+@{
+}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-10 col-sm-offset-2">
+            <form method="post">
+                <input type="hidden" asp-for="Record.CourseId" />
+                <h4>Enter Record Detail</h4>
+
+
+                <label>Choose Student: </label>  <select asp-items="Model.StudentsList" asp-for="Record.StudentId"></select>
+                <br />
+
+                <label>First Assignment: </label> <input asp-for="Record.FirstAssignment" placeholder="Enter First Assignment" />
+                <br />
+
+                <label>Second Assignment: </label> <input asp-for="Record.SecondAssignment" placeholder="Enter Second Assignment" />
+                <br />
+
+                <label>First Test: </label> <input asp-for="Record.FirstTest" placeholder="Enter First Test" />
+                <br />
+
+                <label>Second Test: </label> <input asp-for="Record.SecondTest" placeholder="Enter Second Test" />
+                <br />
+
+                <label>Exam Score: </label>  <input asp-for="Record.Exam" placeholder="Enter Exam Score" />
+                <br />
+
+
+
+
+
+                <br />
+                <button type="submit">Add</button>
+            </form>
+        </div>
+        <hr />
+    </div>
+    <div class="row">
+        <h4>Student Records</h4>
+        <div class="col-sm-offset-2 col-sm-10 col-sm-offset-2">
+            <table class="table">
+                <tr>
+                    <th>Student Name</th>
+                    <th>First Assignment</th>
+                    <th>Second Assigment</th>
+
+                    <th>First Test</th>
+                    <th>Second Test</th>
+
+                    <th>Exam</th>
+                    <th>Total Score</th>
+                    <th>Grade</th>
+                </tr>
+                @foreach (var item in Model.Records)
+                {
+                    <tr>
+
+                    <td>@item.Student.Fullname</td>
+                     <td>@item.FirstAssignment</td>
+                       <td>@item.SecondAssignment</td>
+
+                       <td>@item.FirstTest</td>
+                       <td>@item.SecondTest</td>
+
+                       <td>@item.Exam</td>
+                       <td>@item.Total</td>
+                       <td>@item.Grade</td>
+
+
+                    </tr>
+                }
+            </table>
+
+        </div>
+    </div>
+</div>

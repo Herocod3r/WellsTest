@@ -1,0 +1,47 @@
+﻿@page
+@model StudentRecordModel
+@{
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-10 col-sm-offset-2">
+
+                <h4>Student Record for @Model.Student.Fullname</h4>
+
+
+        </div>
+        <hr />
+    </div>
+    <div class="row">
+        <h4>Student Records</h4>
+        <div class="col-sm-offset-2 col-sm-10 col-sm-offset-2">
+            <table class="table">
+                <tr>
+                    <th>Course Name</th>
+                    <th>First Assignment</th>
+                    <th>Second Assigment</th>
+                    <th>First Test</th>
+                    <th>Second Test</th>
+                    <th>Exam</th>
+                    <th>Total Score</th>
+                    <th>Grade</th>
+                </tr>
+                @foreach (var item in Model.Records)
+                {
+                    <tr>
+                        <td>@item.Course.Name</td>
+                        <td>@item.FirstAssignment</td>
+                        <td>@item.SecondAssignment</td>
+                        <td>@item.FirstTest</td>
+                        <td>@item.SecondTest</td>
+                        <td>@item.Exam</td>
+                        <td>@item.Total</td>
+                        <td>@item.Grade</td>
+
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿@page
+@model ClassModel
+@{
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-10 col-sm-offset-2">
+            <form method="post">
+                <h4>Enter the name</h4>
+                <input asp-for="Class.Name" placeholder="Enter class name" />
+                <br />
+                <button type="submit">Add</button>
+            </form>
+        </div>
+        <hr/>
+
+    </div>
+
+    <div class="row">
+        <h4>Classes</h4>
+        <div class="col-sm-offset-2 col-sm-10 col-sm-offset-2">
+            <ul>
+
+                @foreach(var item in Model.Classes)
+                {
+                    <li>@item.Name</li>
+                }
+            </ul>
+        </div>
+
+    </div>
+
+</div>

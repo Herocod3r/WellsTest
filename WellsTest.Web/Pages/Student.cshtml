@@ -1,0 +1,41 @@
+﻿@page
+@model StudentModel
+@{
+}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-10 col-sm-offset-2">
+            <form method="post">
+                <h4>Enter Student Detail</h4>
+                <input asp-for="Student.Fullname" placeholder="Enter Student name" />
+                <br />
+                <select asp-items="Model.ClassesList" asp-for="Student.ClassId">
+
+                </select>
+                <br />
+                <button type="submit">Add</button>
+            </form>
+        </div>
+        <hr />
+    </div>
+    <div class="row">
+        <h4>Students</h4>
+        <div class="col-sm-offset-2 col-sm-10 col-sm-offset-2">
+
+            <table class="table">
+                <tr>
+                    <th>Name</th> <th>Class</th>
+
+                </tr>
+                @foreach (var item in Model.Students)
+                    {
+                        <tr><td>@item.Fullname</td> <td>@item.Class.Name</td></tr>
+                    }
+            </table>
+
+
+
+
+        </div>
+    </div>
+</div>

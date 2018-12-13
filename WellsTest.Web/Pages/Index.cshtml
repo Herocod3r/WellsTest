@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-3 col-sm-6 col-sm-offset-3">
+            <h2>Welcome to Wells School System.</h2>
+            <br />
+            <p>
+                What do you want to do today?
+
+            </p>
+            <div class="col-sm-3">
+                <a asp-page="Student">Enroll Student</a>
+            </div>
+            <div class="col-sm-3">
+                <a asp-page="Teacher">Enroll Teacher</a>
+            </div>
+            <div class="col-sm-3">
+                <a asp-page="Class">Manage Class</a>
+            </div>
+            <div class="col-sm-3">
+                <a asp-page="Course">Manage Subjects </a>
+            </div>
+            <div class="col-sm-3">
+                <a asp-page="ChooseCourse">Manage Records (Staff)</a>
+            </div>
+            <div class="col-sm-3">
+                <a asp-page="ChooseStudent">View Records Student</a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
